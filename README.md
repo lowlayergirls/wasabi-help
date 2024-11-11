@@ -10,7 +10,7 @@
 解決策: wgetコマンドをHomebrew等のパッケージマネージャ経由でインストールするか、`wget`を`curl -O`（curlのあとに半角スペース、続いてハイフンと大文字アルファベットO）に置き換えて実行してみてください。
 
 #### Sources
-- https://x.com/yuusukesan18/status/1855495837474046428
+- <https://x.com/yuusukesan18/status/1855495837474046428>
 
 ## `the x86_64-unknown-none target may not be installed`
 
@@ -38,8 +38,8 @@ rustup target add x86_64-unknown-none
 ```
 
 #### Sources
-- https://x.com/yuusukesan18/status/1855495837474046428
-- https://x.com/Ysan_999/status/1855600717840646408
+- <https://x.com/yuusukesan18/status/1855495837474046428>
+- <https://x.com/Ysan_999/status/1855600717840646408>
 
 ## 環境構築のHello, Worldで、"No route" "Timed out"という WARN が出ている
 
@@ -48,8 +48,8 @@ rustup target add x86_64-unknown-none
 エラーを無視して自作OS上で`saba`と実行すれば、Hello, worldが表示されます。
 
 #### Sources
-- https://x.com/DAI199/status/1854942923919704066
-- https://x.com/kmkkiii/status/1855163163236614502
+- <https://x.com/DAI199/status/1854942923919704066>
+- <https://x.com/kmkkiii/status/1855163163236614502>
 
 ## run_on_wasabi.shを実行してもQEMUが起動しない
 
@@ -60,5 +60,5 @@ export DISPLAY=0
 を実行してから再度試してみてください。OS側ビルドスクリプトでの修正を予定しています。
 
 #### Sources
-- https://github.com/d0iasm/sababook/issues/2
+- <https://github.com/d0iasm/sababook/issues/2>
 

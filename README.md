@@ -8,22 +8,18 @@
 ## 関連リンク
 
 - <https://github.com/d0iasm/sababook>
-- <https://x.com/d0iasm>
 - <https://github.com/hikalium/wasabi>
-- [X(Twitter)上の反応](https://x.com/search?q=(%20%E4%BD%9C%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6%E3%80%80%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF%20)%20OR%20%23%E4%BD%9C%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF%20OR%20saba_book&src=typed_query&f=live)
-
+  
 ## wgetがみつからない
 
 原因: wgetコマンドがインストールされていない。(macOS等)
 
 解決策: wgetコマンドをHomebrew等のパッケージマネージャ経由でインストールするか、`wget`を`curl -O`（curlのあとに半角スペース、続いてハイフンと大文字アルファベットO）に置き換えて実行してみてください。
 
-#### References
-- <https://x.com/yuusukesan18/status/1855495837474046428>
+## （コード修正済）`the x86_64-unknown-none target may not be installed`
 
-## `the x86_64-unknown-none target may not be installed`
-
-Note: Fixed by [this commit](https://github.com/hikalium/wasabi/commit/4796f62364ce8f24613dccba60618e1d35254b16) on 2024-11-11.
+**（2024-11-11）[Makefileの変更](https://github.com/hikalium/wasabi/commit/4796f62364ce8f24613dccba60618e1d35254b16)により修正しました。**
+**`run_on_wasabi.sh`によって自動的にダウンロードしたMakefileを削除し、もう一度`run_on_wasabi.sh`スクリプトを走らせると問題は出なくなっているはずです。**
 
 症状: 以下のようなエラーが`./run_on_wasabi.sh`を実行した際に発生し、失敗する。
 
@@ -48,22 +44,17 @@ export PATH="$HOME/.cargo/bin:$PATH"
 rustup target add x86_64-unknown-none
 ```
 
-#### References
+#### Reference
+
 - <https://github.com/d0iasm/sababook/issues/1>
-- <https://x.com/yuusukesan18/status/1855495837474046428>
-- <https://x.com/Ysan_999/status/1855600717840646408>
 
-## 環境構築のHello, Worldで、"No route" "Timed out"という WARN が出ている
+## （コード修正済）環境構築のHello, Worldで、"No route" "Timed out"という WARN が出ている
 
-Note: Fixed by [this commit](https://github.com/hikalium/wasabi/commit/abf27c6f587e777fce5c53234d45d997ed075996) on 2024-11-11.
+**（2024-11-11）[OS側のログ出力の変更](https://github.com/hikalium/wasabi/commit/abf27c6f587e777fce5c53234d45d997ed075996)により修正しました。**
 
-これはOS側のコード由来のWarningなので、無視して大丈夫です。（OS側 ~~の修正を検討しています~~ を修正しました。）
+これはOS側のコード由来のWarningなので、無視して大丈夫です。
 
 エラーを無視して自作OS上で`saba`と実行すれば、Hello, worldが表示されます。
-
-#### References
-- <https://x.com/DAI199/status/1854942923919704066>
-- <https://x.com/kmkkiii/status/1855163163236614502>
 
 ## run_on_wasabi.shを実行してもQEMUが起動しない
 
@@ -73,6 +64,6 @@ export DISPLAY=0
 
 を実行してから再度試してみてください。OS側ビルドスクリプトでの修正を予定しています。
 
-#### Sources
-- <https://github.com/d0iasm/sababook/issues/2>
+#### Reference
 
+- <https://github.com/d0iasm/sababook/issues/2>

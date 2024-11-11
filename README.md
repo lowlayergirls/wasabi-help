@@ -16,7 +16,7 @@
 
 解決策: wgetコマンドをHomebrew等のパッケージマネージャ経由でインストールするか、`wget`を`curl -O`（curlのあとに半角スペース、続いてハイフンと大文字アルファベットO）に置き換えて実行してみてください。
 
-#### Sources
+#### References
 - <https://x.com/yuusukesan18/status/1855495837474046428>
 
 ## `the x86_64-unknown-none target may not be installed`
@@ -46,7 +46,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 rustup target add x86_64-unknown-none
 ```
 
-#### Sources
+#### References
+- <https://github.com/d0iasm/sababook/issues/1>
 - <https://x.com/yuusukesan18/status/1855495837474046428>
 - <https://x.com/Ysan_999/status/1855600717840646408>
 
@@ -58,7 +59,7 @@ Note: Fixed by [this commit](https://github.com/hikalium/wasabi/commit/abf27c6f5
 
 エラーを無視して自作OS上で`saba`と実行すれば、Hello, worldが表示されます。
 
-#### Sources
+#### References
 - <https://x.com/DAI199/status/1854942923919704066>
 - <https://x.com/kmkkiii/status/1855163163236614502>
 

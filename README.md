@@ -21,6 +21,8 @@
 
 ## `the x86_64-unknown-none target may not be installed`
 
+Note: Fixed by [this commit](https://github.com/hikalium/wasabi/commit/4796f62364ce8f24613dccba60618e1d35254b16) on 2024-11-11.
+
 症状: 以下のようなエラーが`./run_on_wasabi.sh`を実行した際に発生し、失敗する。
 
 ```
@@ -50,7 +52,9 @@ rustup target add x86_64-unknown-none
 
 ## 環境構築のHello, Worldで、"No route" "Timed out"という WARN が出ている
 
-これはOS側のコード由来のWarningなので、無視して大丈夫です。（OS側の修正を検討しています。）
+Note: Fixed by [this commit](https://github.com/hikalium/wasabi/commit/abf27c6f587e777fce5c53234d45d997ed075996) on 2024-11-11.
+
+これはOS側のコード由来のWarningなので、無視して大丈夫です。（OS側 ~~の修正を検討しています~~ を修正しました。）
 
 エラーを無視して自作OS上で`saba`と実行すれば、Hello, worldが表示されます。
 

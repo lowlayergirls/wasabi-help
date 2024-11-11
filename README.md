@@ -3,6 +3,8 @@
 
 本ページや上記書籍についてのフィードバックは、[本サポートサイトの GitHub Issues](https://github.com/lowlayergirls/wasabi-help/issues)経由で著者までお知らせください。
 
+ハッシュタグは [#作って学ぶブラウザのしくみ](https://x.com/search?q=%23%E4%BD%9C%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF&src=typed_query&f=live) です。
+
 ## 関連リンク
 
 - <https://github.com/d0iasm/sababook>

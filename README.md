@@ -67,3 +67,26 @@ export DISPLAY=0
 #### Reference
 
 - <https://github.com/d0iasm/sababook/issues/2>
+
+## net/wasabi/src/http.rsでcrate::alloc::string::ToStringが見つからない
+
+`net/wasabi/src/http.rs`で`ToString`モジュールをインポートする際、unresolved importのエラーになってしまう。
+
+```
+error[E0433]: failed to resolve: unresolved import
+ --> net/wasabi/src/http.rs:4:12
+  |
+4 | use crate::alloc::string::ToString;
+  |            ^^^^^
+  |            |
+  |            unresolved import
+  |            help: a similar path exists: `core::alloc`  
+```
+
+[リファレンスコード](https://github.com/d0iasm/sababook/blob/main/ch3/saba/net/wasabi/src/http.rs)にあるように、`crate`をつけずに`use alloc::string::ToString`としてください。
+
+書籍のコードは次の版で修正予定です。
+
+#### Reference
+
+- <https://github.com/lowlayergirls/wasabi-help/issues/1>

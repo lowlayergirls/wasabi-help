@@ -113,15 +113,19 @@
 ## p.241 1つ目のコマンド7，8行目
 - 誤：
 
+```
 ├── layout_object.rs
 ├── layout_point.rs
 ├── layout_size.rs
 └── layout_view.rs
+```
 
 - 正：
 
+```
 ├── layout_object.rs
 └── layout_view.rs
+```
 
 ## p.438 「ローカルサーバの構築」2段落1行目
 - 誤：OSを起動させたあと、

@@ -9,7 +9,13 @@
 
 - <https://github.com/d0iasm/sababook>
 - <https://github.com/hikalium/wasabi>
-  
+
+# 正誤情報
+
+[『［作って学ぶ］ブラウザのしくみ』正誤表](https://lowlayergirls.github.io/wasabi-help/errata)
+
+# 補足情報
+
 ## wgetがみつからない
 
 原因: wgetコマンドがインストールされていない。(macOS等)

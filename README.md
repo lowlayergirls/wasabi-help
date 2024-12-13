@@ -96,3 +96,9 @@ error[E0433]: failed to resolve: unresolved import
 #### Reference
 
 - <https://github.com/lowlayergirls/wasabi-help/issues/1>
+
+## 関連書の出版予定について
+
+『［作って学ぶ］ブラウザのしくみ』の中で関連書として紹介している『［作って学ぶ］OSのしくみ』は、2025年の刊行を予定しております。刊行まで、もうしばらくお待ち下さい。
+
+なお、OS部分のソースコードについては、機能的に同等なものを[こちら](https://github.com/hikalium/wasabi)から読むことができます。

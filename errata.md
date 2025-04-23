@@ -335,5 +335,5 @@ if self.input[self.pos].is_ascii_alphanumeric()
 
 ## p379 リスト上から2行目
 
-- 誤：|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {
-- 正：|| self.input[**self**.pos] == '_' || self.input[self.pos] == '$' {
+- 誤：`|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {`
+- 正：`|| self.input[self.pos] == '_' || self.input[self.pos] == '$' {`		◀「s elf」から半角スペースを削除

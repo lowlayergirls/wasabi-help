@@ -304,7 +304,7 @@ if self.input[self.pos].is_ascii_alphanumeric()
 ## p384 1つ目のリスト10行目
 
 - 誤：<identifier name> ::= (& | _ | a-z | A-Z) (& | a-z | A-Z)*
-- 正：<identifier name> ::= (**$** | _ | a-z | A-Z)**+**
+- 正：<identifier name> ::= ($ | _ | a-z | A-Z)+	◀「$」「+」に変更
 
 ## p394 「変数の取得」1段落1行目
 

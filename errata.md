@@ -134,5 +134,204 @@
 - 誤：OSを起動させたあと、
 - 正：OSを起動させ**、sabaと入力しアプリケーションを開始した**あと、
 
+# 初版第1～2刷をお持ちの方（第3刷で修正済み）
+
+## p90 「メイン関数の実装」リスト下から1行目
+- 誤：match client.get("example.com".to_string(), 80, "/".to_string()) {
+- 正：match client.get("example.com".to_string(), 80, **""**.to_string()) {
+
+## p94 「メイン関数の変更」リスト5行目
+- 誤：match client.get("host.test".to_string(), 8000, "/test.html".to_string()) {
+- 正：match client.get("host.test".to_string(), 8000, "**test.html**".to_string()) {
+
+## p127 「AfterAttributeValueQuoted 状態の実装」2段落7行目
+- 誤：BeforeAttributeValue 状態に移動します。
+- 正：BeforeAttribute**Name**状態に移動します。
+
+## p128 リスト下から7行目
+- 誤：self.state = State::BeforeAttributeValue;
+- 正：self.state = State::BeforeAttribute**Name**;
+
+## p166 「要素ノードの追加」2段落2行目
+- 誤：ノード（current）呼ぶ
+- 正：るノード（current）**と**呼ぶ
+
+## p167 リスト
+
+- 誤：
+
+```
+        if current.borrow().first_child().is_some() { ── ❹
+            let mut last_sibiling = current.borrow().first_child();
+            loop { ── ❺
+                last_sibiling = match last_sibiling {
+                    Some(ref node) => {
+                        if node.borrow().next_sibling().is_some() {
+                            node.borrow().next_sibling()
+                        } else {
+                            break;
+                        }
+                    }
+                    None => unimplemented!("last_sibiling should be Some"),
+                };
+            }
+
+            last_sibiling
+                .unwrap()
+                .borrow_mut()
+                .set_next_sibling(Some(node.clone())); ── ❻
+            node.borrow_mut().set_previous_sibling(Rc::downgrade(
+                &current
+                    .borrow()
+                    .first_child()
+                    .expect("failed to get a first child"),
+            ))
+        } else { ── ❼
+            current.borrow_mut().set_first_child(Some(node.clone())); ── ❽
+        }
+
+        current.borrow_mut().set_last_child(Rc::downgrade(&node)); ── ❾
+        node.borrow_mut().set_parent(Rc::downgrade(&current)); ── ❿
+
+        self.stack_of_open_elements.push(node); ── ⓫
+    }
+}
+```
+
+- 正：
+
+```
+        if current.borrow().first_child().is_some() { ── ❹
+            let mut last_**sibling** = current.borrow().first_child();
+            loop { ── ❺
+                last_**sibling** = match last_**sibling** {
+                    Some(ref node) => {
+                        if node.borrow().next_sibling().is_some() {
+                            node.borrow().next_sibling()
+                        } else {
+                            break;
+                        }
+                    }
+                    None => unimplemented!("last_**sibling** should be Some"),
+                };
+            }
+
+            last_**sibling**
+                **.as_ref()**
+                .unwrap()
+                .borrow_mut()
+                .set_next_sibling(Some(node.clone())); ── ❻
+            node.borrow_mut().set_previous_sibling(Rc::downgrade(
+                **&last_sibling.expect("last_sibling should be Some")**
+            ))
+        } else { ── ❼
+            current.borrow_mut().set_first_child(Some(node.clone())); ── ❽
+        }
+
+        current.borrow_mut().set_last_child(Rc::downgrade(&node)); ── ❾
+        node.borrow_mut().set_parent(Rc::downgrade(&current)); ── ❿
+
+        self.stack_of_open_elements.push(node); ── ⓫
+    }
+}
+```
+
+## p171 リストの19行目
+
+- 誤：
+
+```
+if current.borrow().first_child().is_some() {  ── ❺
+    current
+        .borrow()
+        .first_child()
+        .unwrap()
+        .borrow_mut()
+        .set_next_sibling(Some(node.clone())); ── ❻
+    node.borrow_mut().set_previous_sibling(Rc::downgrade(
+        &current
+            .borrow()
+            .first_child()
+            .expect("failed to get a first child"),
+    ));
+```
+
+- 正：
+
+```
+if current.borrow().first_child().is_some() {  ── ❺
+    current
+        .borrow()
+        .first_child()
+        .unwrap()
+        .borrow_mut()
+        .set_next_sibling(Some(node.clone())); ── ❻
+    **（削除）**
+```
+
+## p273 「位置の計算」2段落3、4、5行目
+- 誤：sibiling
+- 正：**sibling**
+
+## p273-274 リスト5、6、7、12、13、14行目
+- 誤：sibiling
+- 正：**sibling**
+
+## p275 リスト5、6、7、11、14、15、24、25行目
+- 誤：sibiling
+- 正：**sibling**
+
+## p334 リスト下から7行目
+- 誤：return Err(Error::InvalidUI("failed to draw a string".to_string()));
+- 正：return Err(Error::InvalidUI("failed to draw a **rect**".to_string()));
+
+## p379 リスト1行目
+
+- 誤：
+
+```
+if self.input[self.pos].is_ascii_alphanumeric() || self.input[self.pos] == '$' {
+```
+
+
+- 正：
+
+```
+if self.input[self.pos].is_ascii_alphanumeric()
+**|| self.input[s elf.pos] == '_' **|| self.input[self.pos] == '$' {
+```
+
+## p384 1つ目のリスト10行目
+
+- 誤：<identifier name> ::= (& | _ | a-z | A-Z) (& | a-z | A-Z)*
+- 正：<identifier name> ::= (**$** | _ | a-z | A-Z)**+**
+
+## p394 「変数の取得」1段落1行目
+
+- 誤：Environment 構造体に保存されている変数をまずvariablesに保存されている変数をチェックし
+- 正：Environment 構造体**の**variablesに保存されている変数をチェックし
+
+## p394 「変数の追加と更新」1段落1行目、2段落1行目
+
+- 誤：varialbe
+- 正：vari**able**
+
+## p395 「evalメソッドの変更」3段落3行目、6段落1行目
+
+- 誤：varialbe
+- 正：vari**able**
+
+## p405 上から3行目
+
+- 誤：変名
+- 正：変**数**名
+
+## p426 「ブラウザAPIを呼び出すメソッドの追加」4段落4行目
+
+- 誤：取得ための
+- 正：取得**する**ための
+
+
+
 
 

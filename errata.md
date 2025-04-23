@@ -266,7 +266,7 @@ if current.borrow().first_child().is_some() {  ── ❺
         .unwrap()
         .borrow_mut()
         .set_next_sibling(Some(node.clone())); ── ❻
-    ✏削除
+    🖍削除
 ```
 
 ## p273 「位置の計算」2段落3、4、5行目

@@ -202,9 +202,9 @@
 
 ```
         if current.borrow().first_child().is_some() { ── ❹
-            let mut last_sibling = current.borrow().first_child();	✏「sibling」のスペルを修正
+            let mut last_sibling = current.borrow().first_child();	◀「sibling」のスペルを修正
             loop { ── ❺
-                last_sibling = match last_sibling {	✏「sibling」のスペルを修正
+                last_sibling = match last_sibling {	◀「sibling」のスペルを修正
                     Some(ref node) => {
                         if node.borrow().next_sibling().is_some() {
                             node.borrow().next_sibling()
@@ -212,17 +212,17 @@
                             break;
                         }
                     }
-                    None => unimplemented!("last_sibling should be Some"),	✏「sibling」のスペルを修正
+                    None => unimplemented!("last_sibling should be Some"),	◀「sibling」のスペルを修正
                 };
             }
 
-            last_sibling	✏「sibling」のスペルを修正
-                .as_ref()	✏追加
+            last_sibling	◀「sibling」のスペルを修正
+                .as_ref()	◀追加
                 .unwrap()
                 .borrow_mut()
                 .set_next_sibling(Some(node.clone())); ── ❻
             node.borrow_mut().set_previous_sibling(Rc::downgrade(
-                &last_sibling.expect("last_sibling should be Some")	✏変更
+                &last_sibling.expect("last_sibling should be Some")	◀変更
             ))
         } else { ── ❼
             current.borrow_mut().set_first_child(Some(node.clone())); ── ❽
@@ -266,7 +266,7 @@ if current.borrow().first_child().is_some() {  ── ❺
         .unwrap()
         .borrow_mut()
         .set_next_sibling(Some(node.clone())); ── ❻
-    🖍削除
+    ◀削除
 ```
 
 ## p273 「位置の計算」2段落3、4、5行目

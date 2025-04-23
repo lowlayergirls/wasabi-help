@@ -202,9 +202,9 @@
 
 ```
         if current.borrow().first_child().is_some() { ── ❹
-            let mut last_**sibling** = current.borrow().first_child();
+            let mut last_sibling = current.borrow().first_child();	✏「sibling」のスペルを修正
             loop { ── ❺
-                last_**sibling** = match last_**sibling** {
+                last_sibling = match last_sibling {	✏「sibling」のスペルを修正
                     Some(ref node) => {
                         if node.borrow().next_sibling().is_some() {
                             node.borrow().next_sibling()
@@ -212,17 +212,17 @@
                             break;
                         }
                     }
-                    None => unimplemented!("last_**sibling** should be Some"),
+                    None => unimplemented!("last_sibling should be Some"),	✏「sibling」のスペルを修正
                 };
             }
 
-            last_**sibling**
-                **.as_ref()**
+            last_sibling	✏「sibling」のスペルを修正
+                .as_ref()	✏追加
                 .unwrap()
                 .borrow_mut()
                 .set_next_sibling(Some(node.clone())); ── ❻
             node.borrow_mut().set_previous_sibling(Rc::downgrade(
-                **&last_sibling.expect("last_sibling should be Some")**
+                &last_sibling.expect("last_sibling should be Some")	✏変更
             ))
         } else { ── ❼
             current.borrow_mut().set_first_child(Some(node.clone())); ── ❽
@@ -266,7 +266,7 @@ if current.borrow().first_child().is_some() {  ── ❺
         .unwrap()
         .borrow_mut()
         .set_next_sibling(Some(node.clone())); ── ❻
-    **（削除）**
+    ✏削除
 ```
 
 ## p273 「位置の計算」2段落3、4、5行目
@@ -298,7 +298,7 @@ if self.input[self.pos].is_ascii_alphanumeric() || self.input[self.pos] == '$' {
 
 ```
 if self.input[self.pos].is_ascii_alphanumeric()
-**|| self.input[s elf.pos] == '_' **|| self.input[self.pos] == '$' {
+|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {	✏「|| self.input[s elf.pos] == '_'」を追加
 ```
 
 ## p384 1つ目のリスト10行目
@@ -330,8 +330,3 @@ if self.input[self.pos].is_ascii_alphanumeric()
 
 - 誤：取得ための
 - 正：取得**する**ための
-
-
-
-
-

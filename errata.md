@@ -298,7 +298,7 @@ if self.input[self.pos].is_ascii_alphanumeric() || self.input[self.pos] == '$' {
 
 ```
 if self.input[self.pos].is_ascii_alphanumeric()
-|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {	🖊「|| self.input[s elf.pos] == '_'」を追加
+|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {	◀「|| self.input[s elf.pos] == '_'」を追加
 ```
 
 ## p384 1つ目のリスト10行目

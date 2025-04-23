@@ -330,3 +330,10 @@ if self.input[self.pos].is_ascii_alphanumeric()
 
 - 誤：取得ための
 - 正：取得**する**ための
+
+# 初版第1～3刷をお持ちの方
+
+## p379 リスト上から2行目
+
+- 誤：|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {
+- 正：|| self.input[**self**.pos] == '_' || self.input[self.pos] == '$' {

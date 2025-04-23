@@ -138,7 +138,7 @@
 
 ## p90 「メイン関数の実装」リスト下から1行目
 - 誤：match client.get("example.com".to_string(), 80, "/".to_string()) {
-- 正：match client.get("example.com".to_string(), 80, **""**.to_string()) {
+- 正：match client.get("example.com".to_string(), 80, **""**.to_string()) {	◀「"/"」の「/」を削除
 
 ## p94 「メイン関数の変更」リスト5行目
 - 誤：match client.get("host.test".to_string(), 8000, "/test.html".to_string()) {

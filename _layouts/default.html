@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
+      {% include breadcrumbs.html %}
       {% if site.title and site.title != page.title and false %}
       <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
       {% endif %}

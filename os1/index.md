@@ -5,6 +5,8 @@
 
 ハッシュタグは [#OSのしくみ](https://x.com/search?q=%23OS%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF%20OR%20%E4%BD%9C%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6OS%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF&src=typed_query&f=live) です。
 
+<img src="./cover.png" width="200px">
+
 ## 関連リンク
 
 - <https://github.com/hikalium/wasabi/tree/wasabi4b>
@@ -16,4 +18,21 @@
 
 # 補足情報
 
-編集中...
+## 本書を読む前に、Rust言語に関して理解しておいた方がいい内容はありますか？
+
+本書はRust初心者の方でも、それ以外のプログラミング言語の経験がある方であれば問題なく読めることを目指して書かれているため、事前学習は必ずしも必要ではありません。どうしても事前に予習したい場合や、読んでいる途中で参考書が欲しくなってきたら、以下の資料を参考にするとよいでしょう。
+
+- [The Rust Programming Language 日本語版](https://doc.rust-jp.rs/book-ja/)
+  - こちらはRust言語の公式チュートリアル（[英語版](https://doc.rust-lang.org/stable/book/)）を日本語に翻訳したものです。Rustの基礎を学ぶ際にちょうどよい、信頼できる情報源となっています。
+- [Comprehensive Rust 日本語版](https://google.github.io/comprehensive-rust/ja/)
+  - こちらの資料は、Rustの利用を推進している会社のひとつであるGoogle社のソフトウェアエンジニアが、社内のRust講座で使用するために書き上げたドキュメントをオープンソース化したものです。こちらも[英語版](https://google.github.io/comprehensive-rust/)が原文となっています。講義形式の内容になっているため、時間を区切ってコツコツ進めたい場合に便利です。また、この資料を利用して講義を運営する人向けのアドバイスも書かれているため、複数人で学習する際にも役立つかもしれません。
+
+また、本書とあわせて、もしくは本書の次に読むと理解が深まると思われる資料はこちらです。
+
+- [並行プログラミング入門 ―Rust、C、アセンブリによる実装からのアプローチ](https://www.oreilly.co.jp//books/9784873119595/)
+  - こちらの書籍は、人類には早すぎた「並行プログラミング」という複雑な問題を、様々な言語による実装を交えつつ解説してくれる良書です。
+- [Writing an OS in Rust 日本語版](https://os.phil-opp.com/ja/)
+  - こちらの一連のブログ記事は、RustでOSを実装する際に必要となる知見が非常に多く掲載されており、筆者も大いにお世話になった情報源です。本書でも、いくつかの箇所でこのブログに言及しています。こちらも[原文](https://os.phil-opp.com/)は英語ですが、有志により翻訳されているため日本語で読むことができます。
+  - こちらのブログ記事を題材にした輪読会に筆者は以前参加しており、その際の録画アーカイブが[YouTubeのプレイリスト](https://www.youtube.com/playlist?list=PL8U-_gKA4tWtNXVnqYRmn8En5Nh6xzADO)にまとめてありますので、睡眠用BGM等としてお役立てください。
+
+さらに発展的なOS自作に関わる情報を手に入れたい方は、筆者だけでなくたくさんの自作OS開発者が集うコミュニティ[osdev-jp](https://osdev.jp/)のSlackへの参加を検討してもよいでしょう。参加方法は[こちら](https://osdev.jp/joinus.html)に記載されています。また、定期的に「自作OSもくもく会」や「作業会」という[イベント](https://osdev-jp.connpass.com/)が開催されておりますので、そちらに参加して本を読み進めるというのもありかもしれません。これらのイベント等の動画アーカイブは[YouTubeのプレイリスト](https://www.youtube.com/@osdev-jp/playlists)にありますので、こちらもあわせて参考にしてみてください。

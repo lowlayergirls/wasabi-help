@@ -168,6 +168,31 @@ pub struct EfiBootServicesTable {
 
 ここでは`graphic_output_protocol`という名前の変数が宣言・使用されていますが、実際には`loaded_image_protocol`に相当する値を格納する変数となっています。したがって、これに即した変数名とするのがより適切でした。プログラム自体の動作には影響ありませんが、混乱を招いたことをお詫びいたします。
 
+## p.224 サンプルコード`src/init.rs`内
+
+- 誤：
+
+```
+pub fn init_basic_runtime(
+    image_handle: EfiHandle,
+    ALLOCATOR.init_with_mmap(&memory_map);
+    memory_map
+}
+```
+
+- 正：
+
+```
+pub fn init_basic_runtime(
+    image_handle: EfiHandle,
+
+// << 中略 >>
+
+    ALLOCATOR.init_with_mmap(&memory_map);
+    memory_map
+}
+```
+
 ## p.245 「async/awaitを使えるようにする」見出し
 
 - 誤：

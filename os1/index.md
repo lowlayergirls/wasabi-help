@@ -36,3 +36,12 @@
   - こちらのブログ記事を題材にした輪読会に筆者は以前参加しており、その際の録画アーカイブが[YouTubeのプレイリスト](https://www.youtube.com/playlist?list=PL8U-_gKA4tWtNXVnqYRmn8En5Nh6xzADO)にまとめてありますので、睡眠用BGM等としてお役立てください。
 
 さらに発展的なOS自作に関わる情報を手に入れたい方は、筆者だけでなくたくさんの自作OS開発者が集うコミュニティ[osdev-jp](https://osdev.jp/)のSlackへの参加を検討してもよいでしょう。参加方法は[こちら](https://osdev.jp/joinus.html)に記載されています。また、定期的に「自作OSもくもく会」や「作業会」という[イベント](https://osdev-jp.connpass.com/)が開催されておりますので、そちらに参加して本を読み進めるというのもありかもしれません。これらのイベント等の動画アーカイブは[YouTubeのプレイリスト](https://www.youtube.com/@osdev-jp/playlists)にありますので、こちらもあわせて参考にしてみてください。
+
+## rustfmtでuseの内容を自動でバラしてほしい
+
+初版第1刷p.139で、useを行ごとにバラすようにしているよう説明しています。
+これを自動でやってくれる方法があると読者より教えていただいたので共有します。
+[(Thanks @lapla-cogito!)](https://github.com/lowlayergirls/wasabi-help/issues/7)
+
+`rustfmt.toml`で
+`imports_granularity = "Item"`と設定すれば、自動でバラしてくれるようです。

@@ -7,6 +7,16 @@
 
 # 初版第1刷の正誤表
 
+## p.xv「第4章　マルチタスクを実装しよう」目次要素
+
+- 誤：
+
+aync/awaitを使えるようにする
+
+- 正：
+
+async/awaitを使えるようにする
+
 ## p.48「"Hello, world"はどこへ行く？」2段落目
 
 - 誤：
@@ -41,6 +51,16 @@
 ## p.220 サンプルコード内 `locate_loaded_image_protocol()`関数内
 
 ここでは`graphic_output_protocol`という名前の変数が宣言・使用されていますが、実際には`loaded_image_protocol`に相当する値を格納する変数となっています。したがって、これに即した変数名とするのがより適切でした。プログラム自体の動作には影響ありませんが、混乱を招いたことをお詫びいたします。
+
+## p.245 「async/awaitを使えるようにする」見出し
+
+- 誤：
+
+aync/awaitを使えるようにする
+
+- 正：
+
+async/awaitを使えるようにする
 
 ## p.311「ECAM ―― Enhanced Configuration Access Method」3段落目
 

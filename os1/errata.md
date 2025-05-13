@@ -81,3 +81,17 @@ async/awaitを使えるようにする
 - 正：
 
 各デバイスに対応するConfiguration空間
+
+## p.312 ページ一番下のコマンド出力結果について
+
+- 誤：
+
+```
+$ qemu-system-x86_64 -machine ? | grep q35 | head -n 1
+```
+
+- 正：
+
+```
+$ qemu-system-x86_64 -machine '?' | grep q35 | head -n 1
+```

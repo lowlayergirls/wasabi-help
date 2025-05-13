@@ -48,6 +48,16 @@ async/awaitを使えるようにする
 
 今回はエミュレーターを使用して
 
+## p.194 「async/awaitを使えるようにする」4段落目
+
+- 誤：
+
+_Identity mapping_
+
+- 正：
+
+_Identity Mapping_
+
 ## p.220 サンプルコード内 `locate_loaded_image_protocol()`関数内
 
 ここでは`graphic_output_protocol`という名前の変数が宣言・使用されていますが、実際には`loaded_image_protocol`に相当する値を格納する変数となっています。したがって、これに即した変数名とするのがより適切でした。プログラム自体の動作には影響ありませんが、混乱を招いたことをお詫びいたします。

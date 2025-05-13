@@ -48,6 +48,25 @@ async/awaitを使えるようにする
 
 今回はエミュレーターを使用して
 
+## p.167 サンプルコード`src/allocator.rs`内
+
+- 誤：
+
+```
+    assert_eq!(round_up_to_nearest_pow2(9), Ok(16));
+    assert_eq!(round_up_to_nearest_pow2(9), Ok(16));
+```
+
+- 正：
+
+```
+    assert_eq!(round_up_to_nearest_pow2(9), Ok(16));
+
+```
+
+(注:
+テストケースの最後の2つが冗長でしたので片方を削除しました。残っていても間違いではありませんが、削除したほうがより適切です。)
+
 ## p.194 「async/awaitを使えるようにする」4段落目
 
 - 誤：

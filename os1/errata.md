@@ -93,7 +93,7 @@ async/awaitを使えるようにする
 0b0XAC_TUWP
 ```
 
-## p.194 「async/awaitを使えるようにする」4段落目
+## p.194 4段落目
 
 - 誤：
 

@@ -18,6 +18,45 @@
 
 # 補足情報
 
+## `rust-analyzer`の設定について
+
+Rustのコードを書く際には`rust-analyzer`というLSPサーバーが非常に便利です。筆者もいつも大変お世話になっています。
+しかし、本書のリポジトリで`rust-analyzer`がうまく動作しない場合があるようですので、その解決策をご紹介します。
+
+本書のリポジトリでは再現性を確保するため、Rustツールチェインのバージョンを`rust-toolchain.toml`に記載のとおり固定しています。そのため、より新しいバージョンのRustツールチェインに同梱されている`rust-analyzer`を使用すると、エラーが発生する可能性があります。多くのエディタにおいて`rust-analyzer`拡張機能は、`rust-toolchain.toml`の内容にかかわらず、最新の（もしくは拡張機能に同梱されているバージョンの）`rust-analyzer`をデフォルトで使用するようになっているため、以下のようなエラーメッセージが表示されることがあります。
+
+```
+[coc.nvim] Workspace `/home/hikalium/repo/wasabi/Cargo.toml` is using an outdated toolchain version `1.77.0-nightly` but rust-analyzer only supports `1.78.0` and higher.
+Consider using the rust-analyzer rustup component for your toolchain or upgrade your toolchain to a supported version.
+```
+
+これを回避するためには、本書のリポジトリで使用されているツールチェインに適合したバージョンの`rust-analyzer`をLSPサーバーとして使用するよう、エディタに指示してあげる必要があります。
+
+まず、以下のコマンドをwasabiリポジトリの内部で実行して、`rust-analyzer`の実行ファイルパスを確認します。
+
+```
+$ rustup component add rust-analyzer && rustup which rust-analyzer
+info: component 'rust-analyzer' for target 'x86_64-unknown-linux-gnu' is up to date
+/home/hikalium/.rustup/toolchains/nightly-2024-01-01-x86_64-unknown-linux-gnu/bin/rust-analyzer
+```
+
+その後、このファイルパスをエディタの設定に追記します。
+
+- Neovimで`coc.nvim`経由で`coc-rust-analyzer`を利用している場合は、エディタを開いて`:CocConfig`もしくは`:CocLocalConfig`を実行して開かれたファイルを
+- VSCodeで[`rust-analyzer`拡張機能](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)を利用している場合は、wasabiレポジトリの配下で`.vscode/settings.json`を
+
+開き、次のアイテムを追加します：
+
+```
+{
+  "rust-analyzer.server.path": "/home/hikalium/.rustup/toolchains/nightly-2024-01-01-x86_64-unknown-linux-gnu/bin/rust-analyzer"
+}
+```
+
+設定を保存したのちエディタを再起動すれば、wasabiに対しても`rust-analyzer`が問題なく動作するようになるはずです。
+
+See also: <https://github.com/lowlayergirls/wasabi-help/issues/9>
+
 ## 本書を読む前に、Rust言語に関して理解しておいた方がいい内容はありますか？
 
 本書はRust初心者の方でも、それ以外のプログラミング言語の経験がある方であれば問題なく読めることを目指して書かれているため、事前学習は必ずしも必要ではありません。どうしても事前に予習したい場合や、読んでいる途中で参考書が欲しくなってきたら、以下の資料を参考にするとよいでしょう。

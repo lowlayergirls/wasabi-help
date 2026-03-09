@@ -337,3 +337,8 @@ if self.input[self.pos].is_ascii_alphanumeric()
 
 - 誤：`|| self.input[s elf.pos] == '_' || self.input[self.pos] == '$' {`
 - 正：`|| self.input[self.pos] == '_' || self.input[self.pos] == '$' {`		◀「s elf」から半角スペースを削除
+
+## p61 1行目
+
+- 誤：プラウザがWebサービスに
+- 正：**ブ**ラウザがWebサービスに
